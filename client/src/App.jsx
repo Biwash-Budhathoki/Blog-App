@@ -1,0 +1,11 @@
+import { useState } from 'react'
+
+function App() {
+  return (
+    <>
+      <h1 className='text-3xl text-red-400'>Blog App</h1>
+    </>
+  )
+}
+
+export default App
