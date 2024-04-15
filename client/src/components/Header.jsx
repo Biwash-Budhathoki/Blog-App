@@ -22,7 +22,7 @@ const Header = () => {
           Blog
         </Link>
 
-        <form className="md:inline">
+        <form className="md:inline hidden">
             <div className="relative">
               <input
                 type="text"
@@ -33,8 +33,25 @@ const Header = () => {
             </div>
           </form>
 
-        <div className="hidden lg:flex items-center space-x-4">
+          <div className="lg:inline hidden mx-8">
+       <ul className="flex flex-row items-center space-x-4">
+         <li>
+           <Link className="hover:bg-gradient-to-r from-indigo-400 via-purple-300 to-green-300 rounded-md p-2" to="/" >Home</Link>
+         </li>
+         <li>
+           <Link className="hover:bg-gradient-to-r from-indigo-400 via-purple-300 to-green-300 rounded-md p-2" to="/about">About</Link>
+         </li>
+         <li>
+           <Link className="hover:bg-gradient-to-r from-indigo-400 via-purple-300 to-green-300 rounded-md p-2" to="/projects">Projects</Link>
+         </li>
+       </ul>
+     </div>
+
+        <div className=" lg:flex items-center space-x-4">
    
+        <button className="text-2xl">
+            <FaMoon />
+          </button>
 
           <Link to="/signin">
             <button className="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
@@ -42,9 +59,7 @@ const Header = () => {
             </button>
           </Link>
 
-          <button className="text-2xl">
-            <FaMoon />
-          </button>
+         
         </div>
 
         <div className="lg:hidden">
@@ -61,30 +76,18 @@ const Header = () => {
         <div className="lg:hidden inline mt-4">
           <ul className="flex flex-col items-center space-y-4">
             <li>
-              <Link to="/">Home</Link>
+              <Link className="hover:bg-gradient-to-r from-indigo-400 via-purple-300 to-green-300 rounded-md p-2" to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link className="hover:bg-gradient-to-r from-indigo-400 via-purple-300 to-green-300 rounded-md p-2" to="/about">About</Link>
             </li>
             <li>
-              <Link to="/projects">Projects</Link>
+              <Link className="hover:bg-gradient-to-r from-indigo-400 via-purple-300 to-green-300 rounded-md p-2" to="/projects">Projects</Link>
             </li>
           </ul>
         </div>
       )}
-       <div className="lg:inline hidden mx-8">
-       <ul className="flex flex-row items-center space-x-4">
-         <li>
-           <Link to="/">Home</Link>
-         </li>
-         <li>
-           <Link to="/about">About</Link>
-         </li>
-         <li>
-           <Link to="/projects">Projects</Link>
-         </li>
-       </ul>
-     </div>
+    
     </nav>
   );
 };
