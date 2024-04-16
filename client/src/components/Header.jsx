@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <nav className="bg-gray-900 text-white py-4">
-      <div className="container mx-auto flex items-center justify-between">
+      <div className="container mx-auto  flex items-center justify-around">
         <Link to="/" className="text-lg font-semibold">
           <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">
             Biwash's
