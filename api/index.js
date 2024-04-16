@@ -3,7 +3,13 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 dotenv.config();
 
+import userRoutes from './routes/user.route.js';
+import authRoutes from './routes/auth.route.js';
+
+
 const app = express();
+app.use(express.json());
+
 
 /* MONGOOSE SETUP */
 const MONGO_URL = process.env.MONGO_URI;
@@ -17,3 +23,6 @@ mongoose.connect(MONGO_URL)
 app.listen(4000, () => {
     console.log('Server is running on port 4000');
 });
+
+app.use('/api/user', userRoutes);
+app.use('/api/auth', authRoutes);
