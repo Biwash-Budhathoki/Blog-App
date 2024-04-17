@@ -14,7 +14,6 @@ app.use(express.json());
 /* MONGOOSE SETUP */
 const MONGO_URL = process.env.MONGO_URI;
 
-console.log('MONGO_URI:', process.env.MONGO_URI);
 
 mongoose.connect(MONGO_URL)
     .then(() => console.log('Connected to MongoDB'))
