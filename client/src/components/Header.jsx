@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
-import { FaMoon } from "react-icons/fa";
+import { FaMoon, FaSun } from "react-icons/fa";
 import { Avatar, Dropdown } from "flowbite-react";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleTheme } from '../redux/theme/themeSlice';
+
 
 
 const Header = () => {
@@ -11,15 +13,18 @@ const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const dispatch = useDispatch();
+
+
   const { currentUser } = useSelector((state) => state.user);
-  console.log("Current User:",currentUser);
+  const { theme } = useSelector((state) => state.theme);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
   return (
-    <nav className="bg-gray-900 text-white py-4">
+    <nav className="border border-t-4 py-4">
       <div className="container mx-auto  flex items-center justify-around">
         <Link to="/" className="text-lg font-semibold">
           <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">
@@ -55,15 +60,18 @@ const Header = () => {
 
         <div className=" lg:flex items-center space-x-4">
    
-        <button className="text-2xl">
-            <FaMoon />
-          </button>
+      <button
+  className='w-12 h-10 hidden sm:inline-flex justify-center items-center bg-gray-300 rounded-full dark:bg-white dark:text-black focus:outline-none'
+  onClick={() => dispatch(toggleTheme())}
+>
+  {theme === 'light' ? <FaSun /> : <FaMoon />}
+</button>
           {currentUser ? (
           <Dropdown
             arrowIcon={false}
             inline
             label={
-<Avatar alt='user' img={currentUser.profilePicture} className="w-12 h-12 rounded-full overflow-hidden"/>            }
+<Avatar alt='user' img={currentUser.profilePicture} className=" rounded-full overflow-hidden"/>            }
           >
             <Dropdown.Header>
               <span className='block text-sm text-black'>@{currentUser.username}</span>
@@ -72,14 +80,14 @@ const Header = () => {
               </span>
             </Dropdown.Header>
             <Link to={'/dashboard?tab=profile'}>
-              <Dropdown.Item className="text-black bg-gray-200 border-[1px] border-teal-300">Profile</Dropdown.Item>
+              <Dropdown.Item className="text-black bg-gray-200 border-[1px] border-teal-300 hover:bg-teal-300">Profile</Dropdown.Item>
             </Link>
             <Dropdown.Divider />
-            <Dropdown.Item className="text-black  bg-gray-200 border-[1px] border-teal-300" >Sign out</Dropdown.Item>
+            <Dropdown.Item className="text-black  bg-gray-200 border-[1px] border-teal-300 hover:bg-teal-300" >Sign out</Dropdown.Item>
           </Dropdown>
         ) :(
           <Link to="/signin">
-            <button className="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+            <button className="text-white px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
               Sign In
             </button>
           </Link>

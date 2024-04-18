@@ -36,11 +36,14 @@ const OAuth = () => {
         }
     };
   return (
-    <Button type='button' gradientDuoTone='pinkToOrange' outline onClick={handleGoogleClick}
-    className='text-blue-500 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-[362px] mx-auto flex items-center justify-center'>
-    <AiFillGoogleCircle className='w-6 h-6 mr-2'/>
-    Continue with Google
-</Button>
+    <button 
+  type='button' 
+  onClick={handleGoogleClick}
+  className='text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-[362px] h-[36px] rounded-md mx-auto flex items-center justify-center'
+>
+  <AiFillGoogleCircle className='w-6 h-6 mr-2'/>
+  Continue with Google
+</button>
   )
 }
 
