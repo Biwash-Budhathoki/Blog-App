@@ -2,11 +2,17 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaMoon } from "react-icons/fa";
+import { Avatar, Dropdown } from "flowbite-react";
+import { useSelector } from 'react-redux';
+
 
 const Header = () => {
   const path = useLocation().pathname;
   const [searchTerm, setSearchTerm] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const { currentUser } = useSelector((state) => state.user);
+  console.log("Current User:",currentUser);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -52,12 +58,32 @@ const Header = () => {
         <button className="text-2xl">
             <FaMoon />
           </button>
-
+          {currentUser ? (
+          <Dropdown
+            arrowIcon={false}
+            inline
+            label={
+<Avatar alt='user' img={currentUser.profilePicture} className="w-12 h-12 rounded-full overflow-hidden"/>            }
+          >
+            <Dropdown.Header>
+              <span className='block text-sm text-black'>@{currentUser.username}</span>
+              <span className='block text-sm text-black font-medium truncate'>
+                {currentUser.email}
+              </span>
+            </Dropdown.Header>
+            <Link to={'/dashboard?tab=profile'}>
+              <Dropdown.Item className="text-black bg-gray-200 border-[1px] border-teal-300">Profile</Dropdown.Item>
+            </Link>
+            <Dropdown.Divider />
+            <Dropdown.Item className="text-black  bg-gray-200 border-[1px] border-teal-300" >Sign out</Dropdown.Item>
+          </Dropdown>
+        ) :(
           <Link to="/signin">
             <button className="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
               Sign In
             </button>
           </Link>
+        )}
 
          
         </div>
