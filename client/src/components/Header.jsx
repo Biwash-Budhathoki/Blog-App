@@ -58,10 +58,10 @@ const Header = () => {
        </ul>
      </div>
 
-        <div className=" lg:flex items-center space-x-4">
+        <div className=" md:flex items-center space-x-4 ">
    
       <button
-  className='w-12 h-10 hidden sm:inline-flex justify-center items-center bg-gray-300 rounded-full dark:bg-white dark:text-black focus:outline-none'
+  className='w-11 h-11  inline-flex justify-center items-center bg-gray-300 rounded-full dark:bg-white dark:text-black focus:outline-none'
   onClick={() => dispatch(toggleTheme())}
 >
   {theme === 'light' ? <FaSun /> : <FaMoon />}
