@@ -11,6 +11,7 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { useEffect, useRef, useState } from 'react';
 import { imgFileUrl } from '../redux/user/userSlice';
+import {Alert} from 'flowbite-react'; 
 
 
 export default function DashProfile() {
@@ -62,10 +63,10 @@ export default function DashProfile() {
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           setImageFileUrl(downloadURL);
+          dispatch(imgFileUrl(downloadURL));
         });
       }
     );
-    dispatch(imgFileUrl(imageFileUrl));
 
   };
   return (
@@ -105,7 +106,7 @@ export default function DashProfile() {
             />
           )}
           <img
-            src={ currentUser.profilePicture}
+            src={ imageFileUrl || currentUser.profilePicture}
             alt='user'
             className={`rounded-full w-full h-full object-cover border-8 border-[lightgray] ${
               imageFileUploadProgress &&

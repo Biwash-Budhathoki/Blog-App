@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaMoon, FaSun } from "react-icons/fa";
-import { Avatar, Dropdown } from "flowbite-react";
+import {  Dropdown } from "flowbite-react";
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleTheme } from '../redux/theme/themeSlice';
 
@@ -71,7 +71,12 @@ const Header = () => {
             arrowIcon={false}
             inline
             label={
-<Avatar alt='user' img={currentUser.profilePicture} className=" rounded-full overflow-hidden"/>            }
+<img 
+  alt='user' 
+  src={currentUser.profilePicture} 
+  className="rounded-full outline-none border-[1px] h-11 w-11 object-cover"
+/>
+ }
           >
             <Dropdown.Header className="dark:bg-black dark:text-white">
               <span className='block text-sm text-black dark:text-white'>@{currentUser.username}</span>
