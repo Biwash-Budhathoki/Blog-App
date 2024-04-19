@@ -1,5 +1,5 @@
 import { Button } from 'flowbite-react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   getDownloadURL,
   getStorage,
@@ -10,8 +10,12 @@ import { app } from '../firebase';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { useEffect, useRef, useState } from 'react';
+import { imgFileUrl } from '../redux/user/userSlice';
+
+
 export default function DashProfile() {
   const { currentUser } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   const [imageFile, setImageFile] = useState(null);
   const [imageFileUrl, setImageFileUrl] = useState(null);
@@ -61,6 +65,8 @@ export default function DashProfile() {
         });
       }
     );
+    dispatch(imgFileUrl(imageFileUrl));
+
   };
   return (
     <div className='max-w-lg mx-auto p-3 w-full dark:text-white'>
@@ -99,7 +105,7 @@ export default function DashProfile() {
             />
           )}
           <img
-            src={imageFileUrl || currentUser.profilePicture}
+            src={ currentUser.profilePicture}
             alt='user'
             className={`rounded-full w-full h-full object-cover border-8 border-[lightgray] ${
               imageFileUploadProgress &&

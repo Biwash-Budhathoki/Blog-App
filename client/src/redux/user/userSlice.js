@@ -23,6 +23,9 @@ const userSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+    imgFileUrl: (state, action) => {
+      state.currentUser.profilePicture = action.payload;
+    }
     
   },
 });
@@ -31,6 +34,7 @@ export const {
   signInStart,
   signInSuccess,
   signInFailure,
+  imgFileUrl,
   
 } = userSlice.actions;
 
