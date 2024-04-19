@@ -3,6 +3,7 @@ import { HiUser, HiArrowSmRight } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+
 export default function DashSidebar() {
   const location = useLocation();
   const [tab, setTab] = useState("");
@@ -20,18 +21,25 @@ export default function DashSidebar() {
         <Sidebar.ItemGroup className="flex flex-col gap-1">
           <Link to="/dashboard?tab=profile">
             <Sidebar.Item
-              className='hover:bg-teal-300 dark:text-black dark:hover:bg-[rgb(16,23,42)] dark:hover:text-white {tab === "profile" ? "bg-[rgb(16,23,42)] text-white" : ""}'
+              className={` hover:bg-teal-300 hover:border-[1px] ${
+                tab === "profile" ? "bg-teal-300 text-white" : ""
+              } dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:hover:border-[1px]  ${
+                tab === "profile" ? "dark:bg-gray-800 text-white" : ""
+              }`}
               active={tab === "profile"}
               icon={HiUser}
               label="User"
-              labelColor="black"
+              labelColor="dark"
               as="div"
             >
               Profile
             </Sidebar.Item>
           </Link>
 
-          <Sidebar.Item icon={HiArrowSmRight} className="cursor-pointer ">
+          <Sidebar.Item
+            icon={HiArrowSmRight}
+            className="hover:border-[1px] cursor-pointer hover:bg-teal-300 hover:text-white dark:text-gray-400 dark:hover:text-white dark:hover:border-[1px] dark:hover:bg-gray-800"
+          >
             Sign Out
           </Sidebar.Item>
         </Sidebar.ItemGroup>
@@ -39,3 +47,4 @@ export default function DashSidebar() {
     </Sidebar>
   );
 }
+

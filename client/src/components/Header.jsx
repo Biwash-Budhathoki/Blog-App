@@ -73,17 +73,17 @@ const Header = () => {
             label={
 <Avatar alt='user' img={currentUser.profilePicture} className=" rounded-full overflow-hidden"/>            }
           >
-            <Dropdown.Header>
-              <span className='block text-sm text-black'>@{currentUser.username}</span>
-              <span className='block text-sm text-black font-medium truncate'>
+            <Dropdown.Header className="dark:bg-black dark:text-white">
+              <span className='block text-sm text-black dark:text-white'>@{currentUser.username}</span>
+              <span className='block text-sm text-black font-medium truncate dark:text-white'>
                 {currentUser.email}
               </span>
             </Dropdown.Header>
             <Link to={'/dashboard?tab=profile'}>
-              <Dropdown.Item className="text-black bg-gray-200 border-[1px] border-teal-300 hover:bg-teal-300">Profile</Dropdown.Item>
+              <Dropdown.Item className="text-black bg-gray-200 hover:border-[1px] border-teal-300 hover:bg-teal-300 dark:bg-black dark:text-white dark:hover:border-[1px]">Profile</Dropdown.Item>
             </Link>
             <Dropdown.Divider />
-            <Dropdown.Item className="text-black  bg-gray-200 border-[1px] border-teal-300 hover:bg-teal-300" >Sign out</Dropdown.Item>
+            <Dropdown.Item className="text-black  bg-gray-200 hover:border-[1px] border-teal-300 hover:bg-teal-300 dark:bg-black dark:text-white dark:hover:border-[1px]" >Sign out</Dropdown.Item>
           </Dropdown>
         ) :(
           <Link to="/signin">
