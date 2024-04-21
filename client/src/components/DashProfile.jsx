@@ -21,9 +21,10 @@ import {
 } from "../redux/user/userSlice";
 import { Alert, Modal, ModalBody } from 'flowbite-react';
 import { HiOutlineExclamationCircle } from 'react-icons/hi';
+import { Link } from "react-router-dom";
 
 export default function DashProfile() {
-  const { currentUser, error } = useSelector((state) => state.user);
+  const { currentUser, error,loading } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const [imageFile, setImageFile] = useState(null);
@@ -229,9 +230,25 @@ export default function DashProfile() {
           placeholder="password"
           onChange={handleChange}
         />
-        <Button type='submit' className="bg-gradient-to-r from-purple-500 to-blue-500 text-white">
-          Update
+            <Button
+            className="bg-gradient-to-r from-purple-500 to-blue-500 text-white w-full"
+          type='submit'
+          gradientDuoTone='purpleToBlue'
+          disabled={loading || imageFileUploading}
+        >
+          {loading ? 'Loading...' : 'Update'}
         </Button>
+        {currentUser.isAdmin && (
+          <Link to={'/create-post'}>
+            <Button
+            className="bg-gradient-to-r from-purple-500 to-blue-500 text-white w-full"
+              type='button'
+              gradientDuoTone='purpleToPink'
+            >
+              Create a post
+            </Button>
+          </Link>
+        )}
       </form>
       <div className="text-red-500 flex justify-between mt-5">
         <span onClick={() => setShowModal(true)} className="cursor-pointer">Delete Account</span>
