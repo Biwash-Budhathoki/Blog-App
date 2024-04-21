@@ -64,12 +64,20 @@ export const deleteUser = async (req, res, next) => {
   try {
     await User.findByIdAndDelete(req.params.userId);
     res
+      .clearCookie('access_token')
       .status(200)
-      .cookie('access_token', '', {
-        httpOnly: true,
-        expires: new Date(0), // Expire the cookie immediately
-      })
-      .json('User has been deleted');  } catch (error) {
+      .json('User has been signed out');  } catch (error) {
+    next(error);
+  }
+};
+
+export const signout = (req, res, next) => {
+  try {
+    res
+      .clearCookie('access_token')
+      .status(200)
+      .json('User has been signed out');
+  } catch (error) {
     next(error);
   }
 };

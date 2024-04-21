@@ -5,6 +5,7 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import {  Dropdown } from "flowbite-react";
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleTheme } from '../redux/theme/themeSlice';
+import {signoutSuccess} from '../redux/user/userSlice';
 
 
 
@@ -21,6 +22,22 @@ const Header = () => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handleSignout = async () => {
+    try {
+      const res = await fetch('/api/user/signout', {
+        method: 'POST',
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        console.log(data.message);
+      } else {
+        dispatch(signoutSuccess());
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (
@@ -88,7 +105,7 @@ const Header = () => {
               <Dropdown.Item className="text-black bg-gray-200 hover:border-[1px] border-teal-300 hover:bg-teal-300 dark:bg-black dark:text-white dark:hover:border-[1px]">Profile</Dropdown.Item>
             </Link>
             <Dropdown.Divider />
-            <Dropdown.Item className="text-black  bg-gray-200 hover:border-[1px] border-teal-300 hover:bg-teal-300 dark:bg-black dark:text-white dark:hover:border-[1px]" >Sign out</Dropdown.Item>
+            <Dropdown.Item onClick={handleSignout} className="text-black  bg-gray-200 hover:border-[1px] border-teal-300 hover:bg-teal-300 dark:bg-black dark:text-white dark:hover:border-[1px]" >Sign out</Dropdown.Item>
           </Dropdown>
         ) :(
           <Link to="/signin">
