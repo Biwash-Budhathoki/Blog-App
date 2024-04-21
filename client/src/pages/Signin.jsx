@@ -8,13 +8,16 @@ import {
   signInFailure,
 } from '../redux/user/userSlice';
 import OAuth from '../components/OAuth';
+import { set } from 'mongoose';
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
+  const [errors, setErrors] = useState(null);
   const { loading, error: errorMessage } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleChange = (e) => {
+    setErrors(null);
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
   };
   const handleSubmit = async (e) => {
@@ -32,6 +35,7 @@ export default function SignIn() {
       const data = await res.json();
       if (data.success === false) {
         dispatch(signInFailure(data.message));
+        setErrors(data.message);
       }
 
       if (res.ok) {
@@ -104,8 +108,8 @@ export default function SignIn() {
             </Link>
           </div>
           {errorMessage && (
-            <Alert className='mt-5' color='failure'>
-              {errorMessage}
+            <Alert className='mt-5 text-red-600' color='failure'>
+              {errors }
             </Alert>
           )}
         </div>
