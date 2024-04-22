@@ -66,6 +66,8 @@ export default function CreatePost() {
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include', // Include cookies in the request
+
         body: JSON.stringify(formData),
       });
       const data = await res.json();
@@ -115,11 +117,9 @@ export default function CreatePost() {
             accept="image/*"
           />
           <Button
-            className="bg-gradient-to-r from-purple-500 to-blue-500 text-black"
+            className="bg-gradient-to-r from-purple-500 to-blue-500  dark:bg-black dark:text-white p-1"
             type="button"
-            gradientDuoTone="purpleToBlue"
             size="sm"
-            outline
             onClick={handleUpdloadImage}
             disabled={imageUploadProgress}
           >
