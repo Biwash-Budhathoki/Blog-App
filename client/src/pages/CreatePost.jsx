@@ -161,7 +161,7 @@ export default function CreatePost() {
           Publish
         </Button>
         {publishError && (
-          <Alert className='mt-5' color='failure'>
+          <Alert className='mt-5 text-red-600' color='failure'>
             {publishError}
           </Alert>
         )}
