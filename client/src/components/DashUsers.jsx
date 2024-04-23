@@ -1,16 +1,16 @@
-import { Modal, Button } from 'flowbite-react';
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { HiOutlineExclamationCircle } from 'react-icons/hi';
-import { FaCheck, FaTimes } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Modal, Button } from "flowbite-react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { HiOutlineExclamationCircle } from "react-icons/hi";
+import { FaCheck, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function DashUsers() {
   const { currentUser } = useSelector((state) => state.user);
   const [users, setUsers] = useState([]);
   const [showMore, setShowMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
-  const [userIdToDelete, setUserIdToDelete] = useState('');
+  const [userIdToDelete, setUserIdToDelete] = useState("");
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -51,8 +51,8 @@ export default function DashUsers() {
   const handleDeleteUser = async () => {
     setShowModal(false);
     try {
-      const res = await fetch(`/api/user/deleteuser/${userIdToDelete}`, {
-        method: 'DELETE',
+      const res = await fetch(`/api/user/delete/${userIdToDelete}`, {
+        method: "DELETE",
       });
       const data = await res.json();
       if (!res.ok) {
@@ -101,9 +101,9 @@ export default function DashUsers() {
                   <td className="px-11 py-6">{user.email}</td>
                   <td className="px-11 py-6">
                     {user.isAdmin ? (
-                      <FaCheck className='text-green-500' />
+                      <FaCheck className="text-green-500" />
                     ) : (
-                      <FaTimes className='text-red-500' />
+                      <FaTimes className="text-red-500" />
                     )}
                   </td>
                   <td className="px-11 py-6">
@@ -144,30 +144,35 @@ export default function DashUsers() {
         </p>
       )}
 
-      <Modal
-        show={showModal}
-        onClose={() => setShowModal(false)}
-        popup
-        size='md'
-      >
-        <Modal.Header />
-        <Modal.Body>
-          <div className='text-center'>
-            <HiOutlineExclamationCircle className='h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto' />
-            <h3 className='mb-5 text-lg text-gray-500 dark:text-gray-400'>
-              Are you sure you want to delete this user?
-            </h3>
-            <div className='flex justify-center gap-4'>
-              <Button color='failure' onClick={handleDeleteUser}>
-                Yes, I'm sure
-              </Button>
-              <Button color='gray' onClick={() => setShowModal(false)}>
-                No, cancel
-              </Button>
-            </div>
-          </div>
-        </Modal.Body>
-      </Modal>
+<Modal
+  show={showModal}
+  onClose={() => setShowModal(false)}
+  popup
+  size="md"
+  className="dark:bg-black"
+>
+  <Modal.Header />
+  <Modal.Body>
+    <div className="text-center">
+      <HiOutlineExclamationCircle className="h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto" />
+      <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-400">
+        Are you sure you want to delete your user?
+      </h3>
+      <div className="flex justify-center gap-4">
+        <Button
+          className="text-red-600"
+          color="failure"
+          onClick={handleDeleteUser}
+        >
+          Yes, I'm sure
+        </Button>
+        <Button color="gray" onClick={() => setShowModal(false)}>
+          No, cancel
+        </Button>
+      </div>
+    </div>
+  </Modal.Body>
+</Modal>
     </div>
   );
 }
