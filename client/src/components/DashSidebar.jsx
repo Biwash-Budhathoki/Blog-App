@@ -1,5 +1,11 @@
 import { Sidebar } from "flowbite-react";
-import { HiUser, HiArrowSmRight, HiDocumentText, HiOutlineUserGroup } from "react-icons/hi";
+import {
+  HiUser,
+  HiArrowSmRight,
+  HiDocumentText,
+  HiOutlineUserGroup,
+  HiAnnotation,
+} from "react-icons/hi";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -21,8 +27,8 @@ export default function DashSidebar() {
 
   const handleSignout = async () => {
     try {
-      const res = await fetch('/api/user/signout', {
-        method: 'POST',
+      const res = await fetch("/api/user/signout", {
+        method: "POST",
       });
       const data = await res.json();
       if (!res.ok) {
@@ -48,7 +54,7 @@ export default function DashSidebar() {
               }`}
               active={tab === "profile"}
               icon={HiUser}
-              label={currentUser.isAdmin ? 'Admin' : 'User'}
+              label={currentUser.isAdmin ? "Admin" : "User"}
               labelColor="dark"
               as="div"
             >
@@ -57,37 +63,53 @@ export default function DashSidebar() {
           </Link>
 
           {currentUser.isAdmin && (
-            <Link to='/dashboard?tab=posts'>
+            <Link to="/dashboard?tab=posts">
               <Sidebar.Item
-              className={` hover:bg-teal-300 hover:text-white hover:border-[1px] ${
-                tab === "posts" ? "bg-teal-300 text-white" : ""
-              } dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:hover:border-[1px]  ${
-                tab === "posts" ? "dark:bg-gray-800 text-white" : ""
-              }`}
-                active={tab === 'posts'}
+                className={` hover:bg-teal-300 hover:text-white hover:border-[1px] ${
+                  tab === "posts" ? "bg-teal-300 text-white" : ""
+                } dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:hover:border-[1px]  ${
+                  tab === "posts" ? "dark:bg-gray-800 text-white" : ""
+                }`}
+                active={tab === "posts"}
                 icon={HiDocumentText}
-                as='div'
+                as="div"
               >
                 Posts
               </Sidebar.Item>
             </Link>
           )}
 
-{currentUser.isAdmin && (
-            <Link to='/dashboard?tab=users'>
-              <Sidebar.Item
-               className={` hover:bg-teal-300 hover:text-white hover:border-[1px] ${
-                tab === "users" ? "bg-teal-300 text-white" : ""
-              } dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:hover:border-[1px]  ${
-                tab === "users" ? "dark:bg-gray-800 text-white" : ""
-              }`}
-                active={tab === 'users'}
-                icon={HiOutlineUserGroup}
-                as='div'
-              >
-                Users
-              </Sidebar.Item>
-            </Link>
+          {currentUser.isAdmin && (
+            <>
+              <Link to="/dashboard?tab=users">
+                <Sidebar.Item
+                 className={` hover:bg-teal-300 hover:text-white hover:border-[1px] ${
+                  tab === "users" ? "bg-teal-300 text-white" : ""
+                } dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:hover:border-[1px]  ${
+                  tab === "users" ? "dark:bg-gray-800 text-white" : ""
+                }`}
+                  active={tab === "users"}
+                  icon={HiOutlineUserGroup}
+                  as="div"
+                >
+                  Users
+                </Sidebar.Item>
+              </Link>
+              <Link to="/dashboard?tab=comments">
+                <Sidebar.Item
+                 className={` hover:bg-teal-300 hover:text-white hover:border-[1px] ${
+                  tab === "comments" ? "bg-teal-300 text-white" : ""
+                } dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:hover:border-[1px]  ${
+                  tab === "comments" ? "dark:bg-gray-800 text-white" : ""
+                }`}
+                  active={tab === "comments"}
+                  icon={HiAnnotation}
+                  as="div"
+                >
+                  Comments
+                </Sidebar.Item>
+              </Link>
+            </>
           )}
 
           <Sidebar.Item
@@ -102,4 +124,3 @@ export default function DashSidebar() {
     </Sidebar>
   );
 }
-
