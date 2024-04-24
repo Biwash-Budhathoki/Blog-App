@@ -72,6 +72,13 @@ const Header = () => {
          <li>
            <Link className="hover:bg-gradient-to-r from-indigo-400 via-purple-300 to-green-300 rounded-md p-2" to="/projects">Projects</Link>
          </li>
+         {
+            currentUser && currentUser.isAdmin && (
+              <li>
+                <Link className="hover:bg-gradient-to-r from-indigo-400 via-purple-300 to-green-300 rounded-md p-2" to="/dashboard?tab=dash">Dashboard</Link>
+              </li>
+            )
+         }
        </ul>
      </div>
 

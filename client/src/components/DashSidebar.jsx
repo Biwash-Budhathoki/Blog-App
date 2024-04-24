@@ -49,6 +49,11 @@ export default function DashSidebar() {
         {currentUser && currentUser.isAdmin && (
             <Link to='/dashboard?tab=dash'>
               <Sidebar.Item
+               className={` hover:bg-teal-300 hover:text-white hover:border-[1px] ${
+                tab === "dash" ? "bg-teal-300 text-white" : ""
+              } dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:hover:border-[1px]  ${
+                tab === "dash" ? "dark:bg-gray-800 text-white" : ""
+              }`}
                 active={tab === 'dash' || !tab}
                 icon={HiChartPie}
                 as='div'
