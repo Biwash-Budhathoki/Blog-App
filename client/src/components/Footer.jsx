@@ -6,7 +6,7 @@ export default function FooterCom() {
     <div>
     <Footer container className='border border-t-[4px] border-teal-500 dark:border-white  dark:bg-[rgb(16,23,42)]'>
       <div className='w-full max-w-7xl mx-auto '>
-        <div className='grid w-full justify-between sm:flex md:grid-cols-1 '>
+        <div className='grid w-full justify-between sm:flex md:grid-cols-1 my-6'>
           <div className='mt-5'>
             <Link
               to='/'
@@ -61,13 +61,13 @@ export default function FooterCom() {
           </div>
         </div>
         <Footer.Divider />
-        <div className='w-full sm:flex sm:items-center sm:justify-between'>
+        <div className='w-full sm:flex sm:items-center sm:justify-between my-4'>
           <Footer.Copyright
             href='#'
             by="Biwash's blog"
             year={new Date().getFullYear()}
           />
-          <div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center">
+          <div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center my-4">
             <Footer.Icon href='#' icon={BsFacebook}/>
             <Footer.Icon href='#' icon={BsInstagram}/>
             <Footer.Icon href='#' icon={BsTwitter}/>
