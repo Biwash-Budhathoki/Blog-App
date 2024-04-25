@@ -118,7 +118,7 @@ const Header = () => {
           </ul>
         </div>
 
-        <div className=" md:flex items-center space-x-4 ">
+        <div className=" flex items-center space-x-4 ">
           <button
             className="w-11 h-11  inline-flex justify-center items-center bg-gray-300 rounded-full dark:bg-white dark:text-black focus:outline-none"
             onClick={() => dispatch(toggleTheme())}
