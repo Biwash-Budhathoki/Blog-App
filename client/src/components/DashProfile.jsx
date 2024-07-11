@@ -243,7 +243,6 @@ export default function DashProfile() {
             <Button
             className="bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white w-full"
               type='button'
-              gradientDuoTone='purpleToPink'
             >
               Create a post
             </Button>

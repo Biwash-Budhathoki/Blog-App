@@ -154,9 +154,8 @@ export default function CreatePost() {
             setFormData({ ...formData, content: value });
           }}        />
         <Button
-          className="bg-gradient-to-r from-purple-500 to-blue-500 text-white"
+          className="bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white"
           type="submit"
-          gradientDuoTone="purpleToPink"
         >
           Publish
         </Button>
