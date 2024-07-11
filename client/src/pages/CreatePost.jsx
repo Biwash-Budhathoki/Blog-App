@@ -117,7 +117,7 @@ export default function CreatePost() {
             accept="image/*"
           />
           <Button
-            className="bg-gradient-to-r from-purple-500 to-blue-500  dark:bg-black dark:text-white p-1"
+            className="bg-gradient-to-r from-gray-700 via-gray-900 to-black dark:bg-black dark:text-white p-1"
             type="button"
             size="sm"
             onClick={handleUpdloadImage}

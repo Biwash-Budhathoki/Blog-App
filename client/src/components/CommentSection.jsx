@@ -155,7 +155,7 @@ export default function CommentSection({ postId }) {
               {200 - comment.length} characters remaining
             </p>
             <Button
-              className="text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+              className="text-white bg-gradient-to-r from-gray-700 via-gray-900 to-black"
               type="submit"
             >
               Submit

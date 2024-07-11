@@ -60,7 +60,7 @@ const Header = () => {
     <nav className="border border-t-4 py-4">
       <div className="container mx-auto  flex items-center justify-around">
         <Link to="/" className="text-lg font-semibold">
-          <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">
+          <span className="px-2 py-1 bg-gradient-to-r from-gray-700 via-gray-900 to-black rounded-lg text-white">
             Biwash's
           </span>
           Blog
@@ -83,7 +83,7 @@ const Header = () => {
           <ul className="flex flex-row items-center space-x-4">
             <li>
               <Link
-                className="hover:bg-gradient-to-r from-indigo-400 via-purple-300 to-green-300 rounded-md p-2"
+                className="hover:bg-gradient-to-r from-gray-700 via-gray-900 to-black rounded-md p-2"
                 to="/"
               >
                 Home
@@ -91,7 +91,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                className="hover:bg-gradient-to-r from-indigo-400 via-purple-300 to-green-300 rounded-md p-2"
+                className="hover:bg-gradient-to-r from-gray-700 via-gray-900 to-black rounded-md p-2"
                 to="/about"
               >
                 About
@@ -99,7 +99,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                className="hover:bg-gradient-to-r from-indigo-400 via-purple-300 to-green-300 rounded-md p-2"
+                className="hover:bg-gradient-to-r from-gray-700 via-gray-900 to-black rounded-md p-2"
                 to="/projects"
               >
                 Projects
@@ -108,7 +108,7 @@ const Header = () => {
             {currentUser && currentUser.isAdmin && (
               <li>
                 <Link
-                  className="hover:bg-gradient-to-r from-indigo-400 via-purple-300 to-green-300 rounded-md p-2"
+                  className="hover:bg-gradient-to-r from-gray-700 via-gray-900 to-black rounded-md p-2"
                   to="/dashboard?tab=dash"
                 >
                   Dashboard
@@ -160,7 +160,7 @@ const Header = () => {
             </Dropdown>
           ) : (
             <Link to="/signin">
-              <button className="text-white px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+              <button className="text-white px-4 py-2 rounded-lg bg-gradient-to-r from-gray-700 via-gray-900 to-black">
                 Sign In
               </button>
             </Link>

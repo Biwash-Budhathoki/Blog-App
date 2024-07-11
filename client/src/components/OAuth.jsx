@@ -39,7 +39,7 @@ const OAuth = () => {
     <button 
   type='button' 
   onClick={handleGoogleClick}
-  className='text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-[362px] h-[36px] rounded-md mx-auto flex items-center justify-center'
+  className='text-white bg-gradient-to-r from-gray-700 via-gray-900 to-black w-[362px] h-[36px] rounded-md mx-auto flex items-center justify-center'
 >
   <AiFillGoogleCircle className='w-6 h-6 mr-2'/>
   Continue with Google

@@ -124,7 +124,7 @@ export default function DashboardComp() {
         <div className='flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800'>
           <div className='flex justify-between  p-3 text-sm font-semibold'>
             <h1 className='text-center p-2'>Recent users</h1>
-            <Button className=' text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
+            <Button className=' text-white bg-gradient-to-r from-gray-700 via-gray-900 to-black'>
               <Link to={'/dashboard?tab=users'}>See all</Link>
             </Button>
           </div>
@@ -155,7 +155,7 @@ export default function DashboardComp() {
         <div className='flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800'>
           <div className='flex justify-between  p-3 text-sm font-semibold'>
             <h1 className='text-center p-2'>Recent comments</h1>
-            <Button className=' text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
+            <Button className=' text-white bg-gradient-to-r from-gray-700 via-gray-900 to-black'>
               <Link to={'/dashboard?tab=comments'}>See all</Link>
             </Button>
           </div>
@@ -182,7 +182,7 @@ export default function DashboardComp() {
         <div className='flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800'>
           <div className='flex justify-between  p-3 text-sm font-semibold'>
             <h1 className='text-center p-2'>Recent posts</h1>
-            <Button className=' text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
+            <Button className=' text-white bg-gradient-to-r from-gray-700 via-gray-900 to-black'>
               <Link to={'/dashboard?tab=posts'}>See all</Link>
             </Button>
           </div>

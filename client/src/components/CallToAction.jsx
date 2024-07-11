@@ -10,7 +10,7 @@ export default function CallToAction() {
             <p className='text-gray-500 my-2'>
                 Checkout these resources with 100 JavaScript Projects
             </p>
-            <Button  className='rounded-tl-xl rounded-bl-none rounded-br-xl rounded-tr-none text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
+            <Button  className='rounded-tl-xl rounded-bl-none rounded-br-xl rounded-tr-none text-white bg-gradient-to-r from-gray-700 via-gray-900 to-black'>
                 <a href="https://www.google.com" target='_blank' rel='noopener noreferrer'>
                     100 JavaScript Projects
                 </a>

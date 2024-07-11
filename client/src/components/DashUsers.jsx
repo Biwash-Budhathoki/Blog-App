@@ -18,6 +18,7 @@ export default function DashUsers() {
         const res = await fetch(`/api/user/getusers`);
         const data = await res.json();
         if (res.ok) {
+          console.log("User Data: ", data.users)
           setUsers(data.users);
           if (data.users.length < 9) {
             setShowMore(false);

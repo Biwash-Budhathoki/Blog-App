@@ -77,7 +77,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
           />
           <div className="flex justify-end gap-2 text-xs">
             <Button
-            className='text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-2'
+            className='text-white bg-gradient-to-r from-gray-700 via-gray-900 to-black p-2'
              type='button'
              size='sm'
               onClick={handleSave}

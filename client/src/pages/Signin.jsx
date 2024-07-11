@@ -51,7 +51,7 @@ export default function SignIn() {
         {/* left */}
         <div className='flex-1'>
           <Link to='/' className='font-bold dark:text-white text-4xl'>
-            <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
+            <span className='px-2 py-1 bg-gradient-to-r from-gray-700 via-gray-900 to-black rounded-lg text-white'>
               Biwash's
             </span>
             Blog
@@ -84,7 +84,7 @@ export default function SignIn() {
               />
             </div>
             <Button
-            className=' text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-[362px] mx-auto flex items-center justify-center '
+            className=' text-white bg-gradient-to-r from-gray-700 via-gray-900 to-black w-[362px] mx-auto flex items-center justify-center '
               gradientDuoTone='purpleToPink'
               type='submit'
               disabled={loading}

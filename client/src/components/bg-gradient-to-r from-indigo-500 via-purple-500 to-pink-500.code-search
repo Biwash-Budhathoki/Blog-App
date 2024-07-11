@@ -1,0 +1,74 @@
+# Query: bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+# ContextLines: 1
+
+15 results - 10 files
+
+client\src\components\CallToAction.jsx:
+  12              </p>
+  13:             <Button  className='rounded-tl-xl rounded-bl-none rounded-br-xl rounded-tr-none text-white bg-gradient-to-r from-blue-600 via-[#444082] to-green-600'>
+  14                  <a href="https://www.google.com" target='_blank' rel='noopener noreferrer'>
+
+client\src\components\Comment.jsx:
+  79              <Button
+  80:             className='text-white bg-gradient-to-r from-blue-600 via-[#444082] to-green-600 p-2'
+  81               type='button'
+
+client\src\components\CommentSection.jsx:
+  157              <Button
+  158:               className="text-white bg-gradient-to-r from-blue-600 via-[#444082] to-green-600"
+  159                type="submit"
+
+client\src\components\DashboardComp.jsx:
+  126              <h1 className='text-center p-2'>Recent users</h1>
+  127:             <Button className=' text-white bg-gradient-to-r from-blue-600 via-[#444082] to-green-600'>
+  128                <Link to={'/dashboard?tab=users'}>See all</Link>
+
+  157              <h1 className='text-center p-2'>Recent comments</h1>
+  158:             <Button className=' text-white bg-gradient-to-r from-blue-600 via-[#444082] to-green-600'>
+  159                <Link to={'/dashboard?tab=comments'}>See all</Link>
+
+  184              <h1 className='text-center p-2'>Recent posts</h1>
+  185:             <Button className=' text-white bg-gradient-to-r from-blue-600 via-[#444082] to-green-600'>
+  186                <Link to={'/dashboard?tab=posts'}>See all</Link>
+
+client\src\components\Footer.jsx:
+  14              >
+  15:               <span className='px-2 py-1 bg-gradient-to-r from-blue-600 via-[#444082] to-green-600 rounded-lg text-white'>
+  16                  Biwash's
+
+client\src\components\Header.jsx:
+   62          <Link to="/" className="text-lg font-semibold">
+   63:           <span className="px-2 py-1 bg-gradient-to-r from-blue-600 via-[#444082] to-green-600 rounded-lg text-white">
+   64              Biwash's
+
+  162              <Link to="/signin">
+  163:               <button className="text-white px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 via-[#444082] to-green-600">
+  164                  Sign In
+
+client\src\components\OAuth.jsx:
+  41    onClick={handleGoogleClick}
+  42:   className='text-white bg-gradient-to-r from-blue-600 via-[#444082] to-green-600 w-[362px] h-[36px] rounded-md mx-auto flex items-center justify-center'
+  43  >
+
+client\src\pages\Search.jsx:
+  138            </div>
+  139:           <Button type='submit' className=' text-white bg-gradient-to-r from-blue-600 via-[#444082] to-green-600'>
+  140              Apply Filters
+
+client\src\pages\Signin.jsx:
+  53            <Link to='/' className='font-bold dark:text-white text-4xl'>
+  54:             <span className='px-2 py-1 bg-gradient-to-r from-blue-600 via-[#444082] to-green-600 rounded-lg text-white'>
+  55                Biwash's
+
+  86              <Button
+  87:             className=' text-white bg-gradient-to-r from-blue-600 via-[#444082] to-green-600 w-[362px] mx-auto flex items-center justify-center '
+  88                gradientDuoTone='purpleToPink'
+
+client\src\pages\Signup.jsx:
+  45          <Link to='/' className='font-bold dark:text-white text-4xl'>
+  46:           <span className='px-2 py-1 bg-gradient-to-r from-blue-600 via-[#444082] to-green-600 rounded-lg text-white'>
+  47              Biwash's
+
+  87            <Button
+  88:             className=' text-white bg-gradient-to-r from-blue-600 via-[#444082] to-green-600 w-[362px] mx-auto flex items-center justify-center '
+  89              gradientDuoTone='purpleToPink'
