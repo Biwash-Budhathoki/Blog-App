@@ -231,7 +231,7 @@ export default function DashProfile() {
           onChange={handleChange}
         />
             <Button
-            className="bg-gradient-to-r from-purple-500 to-blue-500 text-white w-full"
+            className="bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white w-full"
           type='submit'
           gradientDuoTone='purpleToBlue'
           disabled={loading || imageFileUploading}
@@ -241,7 +241,7 @@ export default function DashProfile() {
         {currentUser.isAdmin && (
           <Link to={'/create-post'}>
             <Button
-            className="bg-gradient-to-r from-purple-500 to-blue-500 text-white w-full"
+            className="bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white w-full"
               type='button'
               gradientDuoTone='purpleToPink'
             >
